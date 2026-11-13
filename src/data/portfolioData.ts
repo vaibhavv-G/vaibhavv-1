@@ -1,146 +1,132 @@
-import { ProjectItem, SkillCategory, JourneyMilestone } from '../types/index.ts';
+import { ProjectItem, ServiceOffer } from '../types/index.ts';
 
 export const PERSONAL_INFO = {
   name: 'Vaibhav Garad',
   brand: 'VG',
   location: 'Maharashtra, India',
-  role: 'Student | AI Enthusiast | Aspiring Web Developer',
-  tagline: 'Learning Today. Creating Tomorrow.',
+  role: 'Website Developer',
+  tagline: 'Best Websites. Affordable Price.',
   email: 'vgarad75@gmail.com',
   phone: '7385957299',
   phoneFormatted: '+91 73859 57299',
   youtube: 'https://www.youtube.com/@MiniAiYT',
   instagram: 'https://instagram.com',
   linkedin: 'https://linkedin.com',
-  heroIntro: "HELLO, I'M VAIBHAV GARAD.",
-  heroHeadline: "Hi, I'm Vaibhav. I Create & Explore Digital Experiences.",
+  profileImage: '/assets/aistudio/20261109_084618_8b173a0d.jpg',
+  businessesServed: '50+',
+  heroHeadline: 'I Am a Website Developer.',
+  heroSubheadline: 'I Build the Best Websites for Your Business at an Affordable Price.',
   heroDescription:
-    "I'm a student passionate about Artificial Intelligence, Website Development, Technology and Digital Creativity.",
-  about: {
-    heading: 'About Me',
-    paragraphs: [
-      "I'm Vaibhav Garad from Maharashtra, India.",
-      "I'm a student interested in artificial intelligence, website development, modern technology and digital creativity.",
-      "I enjoy learning new technologies, experimenting with AI tools and building creative digital projects.",
-    ],
-    highlights: [
-      { label: 'Location', value: 'Maharashtra, India' },
-      { label: 'Role', value: 'Student | Tech Explorer' },
-      { label: 'Interests', value: 'AI, Web Development & Creativity' },
-      { label: 'Philosophy', value: 'Learn, Experiment, Build' },
-    ],
-  },
+    'Trusted by 50+ businesses. Fast, mobile-friendly, and modern websites designed to grow your brand online without high agency costs.',
 };
 
-export const SKILLS_DATA: SkillCategory[] = [
+export const KEY_METRICS = [
+  { value: '50+', label: 'Businesses Served' },
+  { value: '100%', label: 'Mobile Responsive' },
+  { value: 'Fast', label: 'On-Time Delivery' },
+  { value: 'Budget', label: 'Affordable Pricing' },
+];
+
+export const SERVICES_OFFERED: ServiceOffer[] = [
   {
-    title: 'Core Web Development',
-    description: 'Foundations and frameworks for responsive, interactive websites',
-    items: [
-      { name: 'HTML', description: 'Semantic structure, modern layouts & accessible web standards', category: 'Frontend' },
-      { name: 'CSS', description: 'Responsive layouts, modern styling systems, Flexbox & Grid', category: 'Frontend' },
-      { name: 'JavaScript', description: 'Core ES6+ logic, DOM interaction & modern web fundamentals', category: 'Language' },
-      { name: 'React', description: 'Component-driven user interfaces, state management & hooks', category: 'Framework' },
+    id: 'business-website',
+    title: 'Business Website',
+    subtitle: 'For shops, startups & local brands',
+    description: 'Clean, trustworthy website to bring your business online and attract customers.',
+    features: [
+      'Mobile & desktop friendly layout',
+      'WhatsApp & contact form integration',
+      'Fast loading & Google-ready setup',
     ],
   },
   {
-    title: 'Artificial Intelligence & Prompting',
-    description: 'Exploring machine intelligence and cognitive workflow optimization',
-    items: [
-      { name: 'Artificial Intelligence', description: 'Concepts, emerging models & digital productivity applications', category: 'AI' },
-      { name: 'Prompt Engineering', description: 'Crafting structured, high-context prompts for generative AI models', category: 'AI' },
-      { name: 'AI Image Generation', description: 'Generative image generation, composition styles & visual synthesis', category: 'AI Media' },
-      { name: 'AI Video Generation', description: 'AI video generation tools, motion prompting & storytelling', category: 'AI Media' },
+    id: 'custom-web-design',
+    title: 'Portfolio & Landing Page',
+    subtitle: 'Most Popular · Best Value',
+    description: 'High-converting modern website tailored to showcase your work, services, or product.',
+    features: [
+      'Custom modern UI/UX design',
+      'Smooth animations & clear branding',
+      'Affordable pricing with full support',
     ],
+    highlight: true,
   },
   {
-    title: 'Creative Media & Content',
-    description: 'Tools for visual branding, storytelling, and digital publishing',
-    items: [
-      { name: 'Video Editing', description: 'Timeline pacing, audio syncing, color touchups & YouTube production', category: 'Production' },
-      { name: 'Canva', description: 'Visual design, YouTube thumbnails, branding layouts & social media graphics', category: 'Design' },
+    id: 'ai-web-experience',
+    title: 'Modern React & AI Site',
+    subtitle: 'Interactive & scalable builds',
+    description: 'Dynamic React web apps and AI-powered creative websites built with modern code.',
+    features: [
+      'Built with React, HTML, CSS & JS',
+      'AI-enhanced visuals & smart workflows',
+      'Clean code & easy future updates',
     ],
   },
 ];
 
+export const CORE_SKILLS = [
+  'React',
+  'JavaScript',
+  'HTML & CSS',
+  'Modern UI Design',
+  'Artificial Intelligence',
+  'Prompt Engineering',
+  'AI Image & Video',
+  'Video Editing',
+  'Canva',
+];
+
 export const PROJECTS_DATA: ProjectItem[] = [
+  {
+    id: 'business-websites',
+    title: '50+ Business Websites',
+    tagline: 'Client Web Development',
+    description:
+      'Designed and delivered modern, mobile-ready websites for 50+ local and growing businesses at affordable rates.',
+    fullDetails:
+      'I have helped 50+ businesses establish a professional online presence with fast, clean, and customer-focused websites—covering landing pages, service showcases, and direct inquiry flows.',
+    category: 'Business Websites',
+    image: '/src/assets/images/project_web_design_1794497950818.jpg',
+    highlights: [
+      '50+ business websites successfully delivered',
+      'Mobile-first responsive layouts for every screen',
+      'Affordable packages tailored for business owners',
+    ],
+    toolsUsed: ['React', 'HTML & CSS', 'JavaScript', 'Responsive UI'],
+  },
   {
     id: 'miniaiyt',
     title: 'MiniAiYT',
     tagline: 'AI Content Creation',
     description:
-      'AI Content Creation exploring practical tutorials, generative workflows, and creative tech experimentation.',
+      'My YouTube channel sharing practical AI tutorials, video workflows, and modern digital tools.',
     fullDetails:
-      'MiniAiYT is my creative YouTube content channel dedicated to artificial intelligence. I create step-by-step video tutorials exploring generative AI tools, prompt engineering, and visual storytelling, handling everything from video ideation and editing to custom thumbnail creation.',
-    category: 'AI Content Creation',
+      'MiniAiYT is my creative YouTube channel focused on making artificial intelligence simple and useful through visual guides, video editing, and creative experiments.',
+    category: 'YouTube Channel',
     image: '/src/assets/images/project_miniaiyt_1794497950092.jpg',
     link: 'https://www.youtube.com/@MiniAiYT',
     highlights: [
-      'Original video tutorials on emerging AI tools & workflows',
-      'End-to-end video editing and thumbnail creation',
-      'Community engagement around practical AI workflows',
+      'Practical AI tool walkthroughs',
+      'Full video editing & thumbnail design',
+      'Growing community on YouTube',
     ],
-    toolsUsed: ['YouTube', 'Video Editing', 'AI Video Generation', 'Canva'],
+    toolsUsed: ['YouTube', 'Video Editing', 'AI Video', 'Canva'],
   },
   {
     id: 'ai-creative-experiments',
-    title: 'AI Creative Experiments',
-    tagline: 'Generative AI & Motion',
+    title: 'AI Creative Visuals',
+    tagline: 'Generative AI Media',
     description:
-      'Exploring AI image and video generation to discover novel visual styles, prompt techniques, and digital storytelling workflows.',
+      'Custom AI image and video generation workflows used to give modern websites standout visual branding.',
     fullDetails:
-      'An exploratory initiative focused on testing and documenting state-of-the-art generative AI tools. Through systematic prompt experimentation, multi-model testing, and style exploration, I study how AI image and video models can be harnessed for high-aesthetic creative media.',
-    category: 'Generative AI',
+      'Exploring generative AI image and video tools alongside prompt engineering to produce clean, high-impact visual assets for digital brands and web projects.',
+    category: 'AI & Design',
     image: '/src/assets/images/project_ai_experiments_1794497950382.jpg',
     highlights: [
-      'Systematic prompt design for consistent aesthetics',
-      'Multi-modal image and video synthesis experiments',
-      'Documenting practical creative workflows',
+      'High-resolution AI visual creation',
+      'Consistent modern brand aesthetics',
+      'Fast asset turnaround for web projects',
     ],
     toolsUsed: ['AI Image Generation', 'AI Video Generation', 'Prompt Engineering'],
-  },
-  {
-    id: 'website-development-projects',
-    title: 'Website Development Projects',
-    tagline: 'Web Design & Development',
-    description:
-      'Personal website design and development experiments exploring modern frontend frameworks, responsive layouts, and clean UI.',
-    fullDetails:
-      'Hands-on exploration of contemporary frontend web technologies including React, TypeScript, and modern CSS. The focus is on crafting lightweight, accessible web interfaces with elegant typography hierarchy, smooth micro-interactions, and thoughtful responsive layouts.',
-    category: 'Web Development',
-    image: '/src/assets/images/project_web_design_1794497950818.jpg',
-    highlights: [
-      'Clean component architecture with React and TypeScript',
-      'Responsive mobile-first layouts with zero-clutter aesthetics',
-      'Smooth performance with accessible semantic HTML',
-    ],
-    toolsUsed: ['React', 'JavaScript', 'HTML & CSS', 'Tailwind CSS'],
-  },
-];
-
-export const JOURNEY_DATA: JourneyMilestone[] = [
-  {
-    year: '2025',
-    title: 'Started exploring AI and digital content creation.',
-    description:
-      'Began exploring artificial intelligence tools, generative prompt techniques, and initiated digital content creation on YouTube with MiniAiYT.',
-    status: 'past',
-    focus: ['AI Exploration', 'Content Creation', 'Generative Prompts'],
-  },
-  {
-    year: '2026',
-    title: 'Learning web development and modern technologies.',
-    description:
-      'Actively learning web development (HTML, CSS, JavaScript, React) and modern technologies to build responsive, interactive digital experiences.',
-    status: 'present',
-    focus: ['Web Development', 'React & JavaScript', 'Modern Tech'],
-  },
-  {
-    year: 'Future',
-    title: 'Building innovative digital projects and improving technical skills.',
-    description:
-      'Committed to building innovative digital projects, mastering advanced software engineering skills, and pursuing technology entrepreneurship.',
-    status: 'future',
-    focus: ['Innovative Projects', 'Advanced Engineering', 'Tech Entrepreneurship'],
   },
 ];

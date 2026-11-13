@@ -11,20 +11,11 @@ export interface ProjectItem {
   toolsUsed: string[];
 }
 
-export interface SkillCategory {
+export interface ServiceOffer {
+  id: string;
   title: string;
+  subtitle: string;
   description: string;
-  items: {
-    name: string;
-    description: string;
-    category: string;
-  }[];
-}
-
-export interface JourneyMilestone {
-  year: string;
-  title: string;
-  description: string;
-  status: 'past' | 'present' | 'future';
-  focus: string[];
+  features: string[];
+  highlight?: boolean;
 }
