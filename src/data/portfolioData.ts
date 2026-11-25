@@ -9,8 +9,10 @@ export const PERSONAL_INFO = {
   email: 'vgarad75@gmail.com',
   phone: '7385957299',
   phoneFormatted: '+91 73859 57299',
-  youtube: 'https://www.youtube.com/@MiniAiYT',
-  instagram: 'https://instagram.com',
+  youtube: 'https://www.youtube.com/@miniaiyt',
+  youtubeHandle: '@miniaiyt',
+  instagram: 'https://www.instagram.com/vaibhavvv_275?avpt=MWQ0dWZtN3Vja3hscQ==',
+  instagramHandle: '@vaibhavvv_275',
   linkedin: 'https://linkedin.com',
   profileImage: '/assets/aistudio/20261109_084618_8b173a0d.jpg',
   businessesServed: '50+',
@@ -96,15 +98,15 @@ export const PROJECTS_DATA: ProjectItem[] = [
   },
   {
     id: 'miniaiyt',
-    title: 'MiniAiYT',
+    title: 'MiniAiYT (@miniaiyt)',
     tagline: 'AI Content Creation',
     description:
-      'My YouTube channel sharing practical AI tutorials, video workflows, and modern digital tools.',
+      'My YouTube channel @miniaiyt sharing practical AI tutorials, video workflows, and modern digital tools.',
     fullDetails:
-      'MiniAiYT is my creative YouTube channel focused on making artificial intelligence simple and useful through visual guides, video editing, and creative experiments.',
+      'MiniAiYT (@miniaiyt) is my creative YouTube channel focused on making artificial intelligence simple and useful through visual guides, video editing, and creative experiments.',
     category: 'YouTube Channel',
     image: '/src/assets/images/project_miniaiyt_1794497950092.jpg',
-    link: 'https://www.youtube.com/@MiniAiYT',
+    link: 'https://www.youtube.com/@miniaiyt',
     highlights: [
       'Practical AI tool walkthroughs',
       'Full video editing & thumbnail design',

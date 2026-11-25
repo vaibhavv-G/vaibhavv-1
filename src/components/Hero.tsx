@@ -1,13 +1,12 @@
 import { motion } from 'motion/react';
 import {
-  Youtube,
-  Instagram,
   Linkedin,
   ArrowRight,
   CheckCircle2,
   MapPin,
 } from 'lucide-react';
 import { PERSONAL_INFO, KEY_METRICS } from '../data/portfolioData.ts';
+import { YouTubeLogo, InstagramLogo } from './SocialIcons.tsx';
 
 export function Hero() {
   const scrollTo = (id: string) => {
@@ -98,17 +97,29 @@ export function Hero() {
 
             {/* Social Links & Location */}
             <div className="pt-4 border-t border-white/10 flex flex-wrap items-center justify-between gap-4">
-              <div className="flex items-center gap-2">
-                <span className="text-xs text-slate-400 font-medium mr-1">Connect:</span>
+              <div className="flex flex-wrap items-center gap-2.5">
                 <a
                   href={PERSONAL_INFO.youtube}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Vaibhav Garad on YouTube (@MiniAiYT)"
-                  className="p-2 rounded-lg text-slate-300 hover:text-white hover:bg-white/10 border border-transparent hover:border-white/10 transition-all"
-                  title="YouTube @MiniAiYT"
+                  aria-label="YouTube @miniaiyt"
+                  className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-medium text-slate-200 hover:text-white transition-all"
+                  title="YouTube @miniaiyt"
                 >
-                  <Youtube className="w-4 h-4" />
+                  <YouTubeLogo className="w-4 h-4 shrink-0" />
+                  <span>@miniaiyt</span>
+                </a>
+
+                <a
+                  href={PERSONAL_INFO.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram @vaibhavvv_275"
+                  className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-medium text-slate-200 hover:text-white transition-all"
+                  title="Instagram @vaibhavvv_275"
+                >
+                  <InstagramLogo className="w-4 h-4 shrink-0" />
+                  <span>Instagram</span>
                 </a>
 
                 <a
@@ -116,21 +127,10 @@ export function Hero() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Vaibhav Garad on LinkedIn"
-                  className="p-2 rounded-lg text-slate-300 hover:text-white hover:bg-white/10 border border-transparent hover:border-white/10 transition-all"
+                  className="p-2 rounded-lg text-slate-300 hover:text-white hover:bg-white/10 border border-white/10 transition-all"
                   title="LinkedIn"
                 >
                   <Linkedin className="w-4 h-4" />
-                </a>
-
-                <a
-                  href={PERSONAL_INFO.instagram}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Vaibhav Garad on Instagram"
-                  className="p-2 rounded-lg text-slate-300 hover:text-white hover:bg-white/10 border border-transparent hover:border-white/10 transition-all"
-                  title="Instagram"
-                >
-                  <Instagram className="w-4 h-4" />
                 </a>
               </div>
 

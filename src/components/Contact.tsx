@@ -11,12 +11,11 @@ import {
   EyeOff,
   Copy,
   Check,
-  Youtube,
-  Instagram,
   Linkedin,
   ArrowUpRight,
 } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData.ts';
+import { YouTubeLogo, InstagramLogo } from './SocialIcons.tsx';
 
 interface ContactProps {
   selectedService?: string | null;
@@ -36,6 +35,8 @@ export function Contact({ selectedService }: ContactProps) {
   const [submitResult, setSubmitResult] = useState<{
     success: boolean;
     message: string;
+    emailDispatched?: boolean;
+    mailtoHref?: string;
     submissionId?: string;
   } | null>(null);
 
@@ -79,16 +80,23 @@ export function Contact({ selectedService }: ContactProps) {
         body: JSON.stringify({
           name: formData.name,
           email: formData.email,
-          message: `[${projectType}] ${formData.message}`,
+          projectType,
+          message: formData.message,
         }),
       });
 
       const data = await response.json();
 
       if (response.ok && data.success) {
+        const subject = encodeURIComponent(`Website Quote Request (${projectType}) from ${formData.name}`);
+        const body = encodeURIComponent(
+          `Name: ${formData.name}\nEmail: ${formData.email}\nProject Type: ${projectType}\n\nMessage:\n${formData.message}`
+        );
         setSubmitResult({
           success: true,
-          message: data.message || 'Your message has been sent to Vaibhav Garad!',
+          emailDispatched: Boolean(data.emailDispatched),
+          mailtoHref: `mailto:${PERSONAL_INFO.email}?subject=${subject}&body=${body}`,
+          message: data.message || `Your quote request has been sent to ${PERSONAL_INFO.email}!`,
           submissionId: data.submissionId,
         });
         setFormData({ name: '', email: '', message: '' });
@@ -228,10 +236,20 @@ export function Contact({ selectedService }: ContactProps) {
                 href={PERSONAL_INFO.youtube}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-medium text-slate-200 transition-colors"
+                className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-medium text-slate-200 transition-colors"
               >
-                <Youtube className="w-3.5 h-3.5 text-rose-400" />
-                <span>@MiniAiYT</span>
+                <YouTubeLogo className="w-4 h-4 shrink-0" />
+                <span>@miniaiyt</span>
+                <ArrowUpRight className="w-3 h-3 text-slate-400" />
+              </a>
+              <a
+                href={PERSONAL_INFO.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-medium text-slate-200 transition-colors"
+              >
+                <InstagramLogo className="w-4 h-4 shrink-0" />
+                <span>@vaibhavvv_275</span>
                 <ArrowUpRight className="w-3 h-3 text-slate-400" />
               </a>
               <a
@@ -242,16 +260,6 @@ export function Contact({ selectedService }: ContactProps) {
               >
                 <Linkedin className="w-3.5 h-3.5 text-sky-400" />
                 <span>LinkedIn</span>
-                <ArrowUpRight className="w-3 h-3 text-slate-400" />
-              </a>
-              <a
-                href={PERSONAL_INFO.instagram}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-medium text-slate-200 transition-colors"
-              >
-                <Instagram className="w-3.5 h-3.5 text-pink-400" />
-                <span>Instagram</span>
                 <ArrowUpRight className="w-3 h-3 text-slate-400" />
               </a>
             </div>
@@ -301,8 +309,17 @@ export function Contact({ selectedService }: ContactProps) {
                 ) : (
                   <AlertCircle className="w-5 h-5 shrink-0 text-rose-600 mt-0.5" />
                 )}
-                <div className="text-xs sm:text-sm">
+                <div className="text-xs sm:text-sm space-y-2">
                   <p className="font-semibold">{submitResult.message}</p>
+                  {submitResult.success && !submitResult.emailDispatched && submitResult.mailtoHref && (
+                    <a
+                      href={submitResult.mailtoHref}
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-700 text-white text-xs font-semibold hover:bg-emerald-800 transition-colors"
+                    >
+                      <Mail className="w-3.5 h-3.5" />
+                      <span>Send Directly via Email App</span>
+                    </a>
+                  )}
                 </div>
               </div>
             )}

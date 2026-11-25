@@ -1,4 +1,6 @@
 import { ArrowUp } from 'lucide-react';
+import { PERSONAL_INFO } from '../data/portfolioData.ts';
+import { YouTubeLogo, InstagramLogo } from './SocialIcons.tsx';
 
 export function Footer() {
   const scrollToTop = () => {
@@ -17,8 +19,33 @@ export function Footer() {
           <span>Website Developer (50+ Businesses Served)</span>
         </div>
 
-        <div className="flex items-center gap-4">
-          <p>© 2026 Vaibhav Garad. All Rights Reserved.</p>
+        <div className="flex items-center gap-3">
+          <a
+            href={PERSONAL_INFO.youtube}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="YouTube @miniaiyt"
+            className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 text-slate-200 border border-white/10 transition-colors"
+            title="YouTube @miniaiyt"
+          >
+            <YouTubeLogo className="w-4 h-4" />
+            <span>@miniaiyt</span>
+          </a>
+
+          <a
+            href={PERSONAL_INFO.instagram}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram @vaibhavvv_275"
+            className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 text-slate-200 border border-white/10 transition-colors"
+            title="Instagram @vaibhavvv_275"
+          >
+            <InstagramLogo className="w-4 h-4" />
+            <span>Instagram</span>
+          </a>
+
+          <p className="hidden md:block">© 2026 Vaibhav Garad.</p>
+
           <button
             type="button"
             onClick={scrollToTop}
